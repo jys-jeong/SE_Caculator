@@ -1,11 +1,9 @@
-def add(a,b):
+ def add(a,b):
     return a+b    
-
 def sub(a,b):
     return a-b
-
 def mul(a,b):
-    
+    return a*b
 
 
 res=int(input())
@@ -22,4 +20,3 @@ while True:
         res = sub(res,num2)
     elif(operator=='*'):
         res = mul(res,num2)
-
