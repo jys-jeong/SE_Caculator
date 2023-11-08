@@ -31,10 +31,13 @@ def easter_egg(a):
 
 def calculator():
     isCorrect = True  # '+', '-', '*' 이외의 연산자가 들어올 경우 False 처리
+    intFlag = True # 정수 아닌 수가 들어오면 False
     temp = ""  # 한 가지 연산만 들어왔는지 판단하는 temp 변수
-
-    res = float(input())
-
+    res = str(input())
+    if not (str.isdigit(res)):
+        intFlag = False
+    res = float(res)    
+        
     while True:
         operator = input()
 
@@ -49,7 +52,10 @@ def calculator():
             temp = operator
 
         # 가독성을 위해 num2 변수명 --> next_num으로 수정
-        next_num = float(input())
+        next_num = str(input())
+        if not (str.isdigit(next_num)):
+            intFlag = False
+        next_num = float(next_num)
 
         if (operator == '+'):
             res = add(res, next_num)
@@ -58,12 +64,9 @@ def calculator():
         elif (operator == '*'):
             res = mul(res, next_num)
 
-    if isCorrect:
-        if isinstance(res,int):
-            print(res)
+    if isCorrect and intFlag:
+            print(int(res))
             easter_egg(str(res))
-        else:
-            print("ERROR!!!")
     else:
         print("ERROR!!!")
 
