@@ -24,6 +24,9 @@ def sub(num1, num2):
 def mul(num1, num2):
     return num1 * num2
 
+def factorial(num):
+    return num * factorial(num-1) if num > 1 else 1
+
 # 기존 이스터에그는 "="를 쳐야 나오는데
 # 이스터에그 숫자만 치면 나오도록 변경
 
@@ -120,4 +123,6 @@ class TestFunctions(unittest.TestCase):
             easter_egg("123")
             self.assertEqual(mock_stdout.getvalue().strip(), "")
             
-calculator()
+
+print(factorial(100))
+# calculator()
