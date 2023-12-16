@@ -1,4 +1,4 @@
-class TestFunctions(unittest.TestCase):
+# class TestFunctions(unittest.TestCase):
 #     def test_add(self):
 #         self.assertEqual(add(3, 5), 8)
 #         self.assertEqual(add(-1, 1), 0)
