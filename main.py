@@ -88,7 +88,25 @@ class TestFunctions(unittest.TestCase):
         self.assertEqual(mul(-1, 1), -1)
         self.assertEqual(mul(0, 0), 0)
         self.assertEqual(mul(-5, -7), 35)
+    def test_factorial(self):
 
+        self.assertEqual(factorial(0), 1)
+
+        with self.assertRaises(ValueError) as context:
+            factorial(-5)
+        self.assertEqual(str(context.exception), "[ERROR] Out Of Range")
+
+        with self.assertRaises(ValueError) as context:
+            factorial(2, 3)
+        self.assertEqual(str(context.exception), "[ERROR] Input Error")
+
+        self.assertEqual(factorial(1), 1)
+
+        self.assertEqual(factorial(2), 2)
+
+        self.assertEqual(factorial(3), 6)
+
+        self.assertEqual(factorial(10), 3628800)
     def test_easter_egg(self):
         # messages 딕셔너리에 있는 각 숫자에 대해 올바른 메시지가 출력되는지 테스트
         for num, message in messages.items():
