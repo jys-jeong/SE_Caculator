@@ -66,7 +66,10 @@ def calculator():
                     factoend = input()
                     if factoend == '=':
                         result = factorial(result)
-                        print(result)
+                        if(result=="[ERROR] Out Of Range"):
+                            print(result)
+                        else:
+                            print(int(result))
                         return 0
                     else:
                         isCorrect = False
